@@ -15,12 +15,13 @@ import Card from "../subcomponents/Card";
 import QuickRoute from "../subcomponents/QuickRoute";
 import doctors from "../consts/Doctor";
 import pageImages from "../consts/PageImages";
+import {getProducts} from"../consts/productscreen";
 
 export default function HomeScreen({ navigation }) {
   const [search, setSearch] = useState("");
   const [filteredDataSource, setFilteredDataSource] = useState(doctors);
   const [masterDataSource, setMasterDataSource] = useState(doctors);
-
+  const[Datasource,setDatasource]=useState(getProducts);
   const searchFilterFunction = (text) => {
     // Check if searched text is not blank
     if (text) {
@@ -34,6 +35,7 @@ export default function HomeScreen({ navigation }) {
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
       });
+      
       setFilteredDataSource(newData);
       setSearch(text);
     } else {
@@ -42,6 +44,13 @@ export default function HomeScreen({ navigation }) {
       setFilteredDataSource(masterDataSource);
       setSearch(text);
     }
+    const searchFilterFunction2 =(text2)=>{
+    const testData = Datasource.filter(function(items){
+      const itemData2= `${items.name}`.toUpperCase()?`${items.name}`.toUpperCase():"".toUpperCase();
+      const textData2 =text2.toUpperCase();
+      return itemData2.indexOf(textData2)> -1;
+    });setDatasource(testData);}
+    
   };
 
   const [activeCardIndex, setActiveCardIndex] = useState(0);
@@ -58,7 +67,7 @@ export default function HomeScreen({ navigation }) {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.header}>
-          <Text style={styles.textHeader}>Find your doctor here</Text>
+          <Text style={styles.textHeader}> Nursing at Home </Text>
         </View>
 
         <SearchBar
@@ -66,13 +75,14 @@ export default function HomeScreen({ navigation }) {
           searchIcon={{ size: 26 }}
           containerStyle={styles.searchContainer}
           inputContainerStyle={styles.searchInputContainer}
-          placeholder="Type your doctor's name"
+          placeholder=" search"
           onChangeText={(text) => searchFilterFunction(text)}
           onClear={(text) => searchFilterFunction("")}
           value={search}
         />
-
-        <CategoryList />
+       <Text style={{  fontSize: 26,
+    fontWeight: "bold",left:30,top:5}}>Services</Text>
+        {/* // <CategoryList /> */}
 
         <View>
           <FlatList
@@ -105,17 +115,17 @@ export default function HomeScreen({ navigation }) {
           <FlatList
             horizontal
             showsHorizontalScrollIndicator={false}
-            data={pageImages}
+            data={Datasource}
             contentContainerStyle={{
               paddingLeft: 20,
               paddingVertical: 30,
             }}
-            renderItem={({ item, index }) => (
+            renderItem={({ items, index }) => (
               <TouchableOpacity
                 activeOpacity={1}
-                onPress={() => navigation.navigate(item)}
+                onPress={() => navigation.navigate("Shopequipments",items)}
               >
-                <QuickRoute page={item} />
+                <Card page={items} />
               </TouchableOpacity>
             )}
           />

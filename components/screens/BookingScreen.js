@@ -32,17 +32,19 @@ function BookingScreen({ navigation, route }) {
             </Text>
             <Text
               style={{
+                top:20,
                 fontSize: 14,
                 fontWeight: "bold",
                 color: "grey",
                 paddingBottom: 5,
+                
               }}
             >
               {doctor.professional}
             </Text>
           </View>
         </View>
-        <View style={{ flexDirection: "row" }}>
+        <View style={{ flexDirection: "row",right:90 }}>
           <Icon name="star" size={20} color="orange" />
           <Icon name="star" size={20} color="orange" />
           <Icon name="star" size={20} color="orange" />
@@ -55,8 +57,8 @@ function BookingScreen({ navigation, route }) {
         <Text>
           {"\u2022"} {doctor.description}
         </Text>
-        <Text>
-          {"\u2022"} Work experiences - {doctor.experiences}
+        <Text style ={{fontWeight: "bold"}} >
+          {"\u2022"} Starting from - {'\u20B9'}{doctor.experiences}
         </Text>
       </View>
 
@@ -81,7 +83,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   description: {
-    fontSize: 15,
+    fontSize: 20,
     marginTop: 15,
     marginLeft: 20,
   },

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import images from "../screens/1Stopcare.jpeg"
 import {
   StyleSheet,
   Text,
   View,
   KeyboardAvoidingView,
-  TextInput,
+  TextInput,Image
 } from "react-native";
 import { Button } from "react-native-elements";
 import { auth } from "../../firebase";
@@ -31,7 +32,8 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.greeting}>Welcome to Doctor App!</Text>
+         <Image style={{height:360,width:360}} source={require("../screens/1Stopcare.jpeg")}/>
+        <Text style={styles.greeting}>Welcome to  1stopCare!</Text>
       </View>
       <View style={styles.inputContainer}>
         <TextInput
@@ -78,6 +80,7 @@ const styles = StyleSheet.create({
   },
   greeting: {
     fontSize: 28,
+    left:30,
     fontWeight: "bold",
   },
   inputContainer: {

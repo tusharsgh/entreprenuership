@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 function AboutDoctorScreen({ navigation, doctor }) {
   return (
     <View style={styles.headerContainer}>
-      <Text style={styles.headerText}>Doctor's greeting</Text>
+      <Text style={styles.headerText}>About the program</Text>
       <Text style={styles.greetingText}>{doctor.greeting}</Text>
     </View>
   );

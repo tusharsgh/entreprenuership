@@ -13,7 +13,7 @@ function SubTabView({ doctor }) {
   const [index, setIndex] = useState(0);
   const [routes] = useState([
     { key: "first", title: "Make an appointment" },
-    { key: "second", title: "About the doctor" },
+    { key: "second", title: "About the Program" },
   ]);
 
   const MedicalAppointmentRoute = () => {

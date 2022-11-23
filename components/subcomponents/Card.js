@@ -13,11 +13,11 @@ function Card({ doctor, index }) {
       />
       <View style={styles.cardTitle}>
         <Text style={{ fontWeight: "bold", fontSize: 16 }}>
-          Dr.{doctor.lastname}
+          {doctor.firstname } {doctor.lastname}
         </Text>
-        <Text style={{ fontWeight: "bold", fontSize: 14, color: "grey" }}>
+        {/* <Text style={{ fontWeight: "bold", fontSize: 14, color: "grey" }}>
           {doctor.title}
-        </Text>
+        </Text> */}
       </View>
     </View>
   );

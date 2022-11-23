@@ -7,7 +7,7 @@ function ConfirmScreen({ navigation }) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-          Congratulations! Appointment was submitted.
+          Congratulations! Appointment was submitted. our team will contact you soon
         </Text>
       </View>
 

@@ -8,7 +8,7 @@ import BookingScreen from "../screens/BookingScreen";
 import DietScreen from "../screens/DietScreen";
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
-
+import ShopEquipments from"../navigation/ShopEquipments";
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +25,15 @@ const HomeStackNavigator = () => {
         component={BookingScreen}
         options={{
           title: "Book Appointment",
+          headerTitleAlign: "center",
+          headerTitleStyle: { fontSize: 18, fontWeight: "bold" },
+        }}
+      />
+       <Stack.Screen
+        name="Shop"
+        component={ShopEquipments}
+        options={{
+          title: "Shop equipments",
           headerTitleAlign: "center",
           headerTitleStyle: { fontSize: 18, fontWeight: "bold" },
         }}
@@ -62,7 +71,7 @@ const HomeTabNavigator = () => {
         component={HomeStackNavigator}
         options={{ headerShown: false }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Appointment"
         component={AppointmentScreen}
         options={{
@@ -70,8 +79,8 @@ const HomeTabNavigator = () => {
           headerTitle: "Customer's Appointment",
           headerTitleAlign: "center",
         }}
-      />
-      <Tab.Screen name="Diet" component={DietScreen} />
+      /> */}
+      {/* <Tab.Screen name="Diet" component={DietScreen} /> */}
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}

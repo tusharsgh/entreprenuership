@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput,Image } from "react-native";
 import React, { useState } from "react";
 import { Button } from "react-native-elements";
 import { auth } from "../../firebase";
@@ -25,6 +25,7 @@ const SignUpScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View>
+      <Image style={{height:360,width:360}} source={require("../screens/1Stopcare.jpeg")}/>
         <Text style={styles.greeting}>Register your account!</Text>
       </View>
       <View style={styles.inputContainer}>
@@ -73,6 +74,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   greeting: {
+    left:30,
     fontSize: 28,
     fontWeight: "bold",
   },
