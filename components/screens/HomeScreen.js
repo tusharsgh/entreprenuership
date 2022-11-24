@@ -10,18 +10,18 @@ import {
 } from "react-native";
 import { SearchBar } from "react-native-elements";
 import Headline from "../subcomponents/Headline";
-import CategoryList from "../subcomponents/CategoryList";
 import Card from "../subcomponents/Card";
 import QuickRoute from "../subcomponents/QuickRoute";
 import doctors from "../consts/Doctor";
 import pageImages from "../consts/PageImages";
-import {getProducts} from"../consts/productscreen";
+import MyCart from "../Ecommerce/MyCart";
+
 
 export default function HomeScreen({ navigation }) {
   const [search, setSearch] = useState("");
   const [filteredDataSource, setFilteredDataSource] = useState(doctors);
   const [masterDataSource, setMasterDataSource] = useState(doctors);
-  const[Datasource,setDatasource]=useState(getProducts);
+  // const[Datasource,setDatasource]=useState(getProducts);
   const searchFilterFunction = (text) => {
     // Check if searched text is not blank
     if (text) {
@@ -82,51 +82,29 @@ export default function HomeScreen({ navigation }) {
         />
        <Text style={{  fontSize: 26,
     fontWeight: "bold",left:30,top:5}}>Services</Text>
-        {/* // <CategoryList /> */}
+         {/* <CategoryList /> */}
 
-        <View>
+        <View style={styles.list}>
           <FlatList
             onMomentumScrollEnd={(e) => {
               setActiveCardIndex(
                 Math.round(e.nativeEvent.contentOffset.x / cardWidth)
               );
             }}
-            horizontal
-            showsHorizontalScrollIndicator={false}
+            vertical
+            showsHorizontalScrollIndicator={true}
             data={filteredDataSource}
-            contentContainerStyle={{ paddingVertical: 30, paddingLeft: 20 }}
+            contentContainerStyle={{padding:20, paddingVertical:50 }}
             renderItem={({ item, index }) => (
+              <View style={styles.cards}>
               <TouchableOpacity
-                disabled={activeCardIndex != index}
+                // disabled={activeCardIndex != index}
                 activeOpacity={1}
                 onPress={() => navigation.navigate("Booking", item)}
               >
                 <Card doctor={item} index={index} />
               </TouchableOpacity>
-            )}
-          />
-        </View>
-
-        <View style={styles.headerQuickAcess}>
-          <Text style={styles.textHeaderQuickAccess}>Quick Access</Text>
-        </View>
-
-        <View>
-          <FlatList
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            data={pageImages}
-            contentContainerStyle={{
-              paddingLeft: 20,
-              paddingVertical: 30,
-            }}
-            renderItem={({ item, index }) => (
-              <TouchableOpacity
-                activeOpacity={1}
-                onPress={() => navigation.navigate(item)}
-              >
-                < QuickRoute  page={item} />
-              </TouchableOpacity>
+              </View>
             )}
           />
         </View>
@@ -172,4 +150,12 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: "bold",
   },
+  // list:{
+  //   flex:1,
+  //   alignItems:"center",
+  // },
+  cards:{
+    flex:1,
+    paddingVertical:20,
+  }
 });

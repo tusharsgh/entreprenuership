@@ -3,13 +3,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-import AppointmentScreen from "../screens/AppointmentScreen";
+import myCart from "../Ecommerce/MyCart";
 import BookingScreen from "../screens/BookingScreen";
 
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
-// import  ProductDetails  from "../screens/ProductsDetails";
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
@@ -30,15 +29,15 @@ const HomeStackNavigator = () => {
           headerTitleStyle: { fontSize: 18, fontWeight: "bold" },
         }}
       />
-       {/* <Stack.Screen
-        name="ProductDetails"
-        component={ProductDetails}
+       <Stack.Screen
+        name="Mycart"
+        component={myCart}
         options={{
           title: "Shop_equipments",
           headerTitleAlign: "center",
           headerTitleStyle: { fontSize: 18, fontWeight: "bold" },
         }}
-      /> */}
+        />
     </Stack.Navigator>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text, Dimensions, Image } from "react-native";
 
 const { width } = Dimensions.get("screen");
-const cardWidth = width / 1.9;
+const cardWidth = width / 1.1;
 
 function Card({ doctor, index }) {
   return (
@@ -27,7 +27,8 @@ export default Card;
 
 const styles = StyleSheet.create({
   card: {
-    height: 280,
+    flex:1,
+    height: 380,
     width: cardWidth,
     elevation: 15,
     marginRight: 20,
@@ -35,17 +36,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#ADD8E6",
   },
   cardImage: {
-    height: 230,
+    height: 290,
     width: "90%",
-    marginTop: 8,
+    marginTop: "auto",
     marginRight: "auto",
     marginLeft: "auto",
     borderRadius: 15,
+    paddingVertical:20
   },
   cardTitle: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 10,
+    justifyContent: "center",
+    alignItems:"center",
+    marginTop: 20,
+    marginBottom:20,
     marginLeft: 8,
     marginRight: 8,
   },
