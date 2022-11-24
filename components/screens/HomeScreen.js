@@ -115,17 +115,17 @@ export default function HomeScreen({ navigation }) {
           <FlatList
             horizontal
             showsHorizontalScrollIndicator={false}
-            data={Datasource}
+            data={pageImages}
             contentContainerStyle={{
               paddingLeft: 20,
               paddingVertical: 30,
             }}
-            renderItem={({ items, index }) => (
+            renderItem={({ item, index }) => (
               <TouchableOpacity
                 activeOpacity={1}
-                onPress={() => navigation.navigate("Shopequipments",items)}
+                onPress={() => navigation.navigate(item)}
               >
-                <Card page={items} />
+                < QuickRoute  page={item} />
               </TouchableOpacity>
             )}
           />

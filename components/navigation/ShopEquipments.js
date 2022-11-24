@@ -8,7 +8,8 @@ import { Cart } from '../screens/Cart.js';
 import { CartIcon } from '../screens/CartIcon.js';
 import { CartProvider } from '../screens/cartContext';
 const Stack = createNativeStackNavigator();
-function App() {
+function ShopEquipments({navigation,route }) {
+  
   return (
     <CartProvider>
       <NavigationContainer>
@@ -41,4 +42,4 @@ const styles = StyleSheet.create({
     fontSize: 20
   }
 });
-export default App;
+export default ShopEquipments;

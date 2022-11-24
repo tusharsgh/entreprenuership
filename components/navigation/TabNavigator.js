@@ -5,10 +5,11 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 import AppointmentScreen from "../screens/AppointmentScreen";
 import BookingScreen from "../screens/BookingScreen";
-import DietScreen from "../screens/DietScreen";
+
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
-import ShopEquipments from"../navigation/ShopEquipments";
+
+// import  ProductDetails  from "../screens/ProductsDetails";
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
@@ -29,15 +30,15 @@ const HomeStackNavigator = () => {
           headerTitleStyle: { fontSize: 18, fontWeight: "bold" },
         }}
       />
-       <Stack.Screen
-        name="Shop"
-        component={ShopEquipments}
+       {/* <Stack.Screen
+        name="ProductDetails"
+        component={ProductDetails}
         options={{
-          title: "Shop equipments",
+          title: "Shop_equipments",
           headerTitleAlign: "center",
           headerTitleStyle: { fontSize: 18, fontWeight: "bold" },
         }}
-      />
+      /> */}
     </Stack.Navigator>
   );
 };

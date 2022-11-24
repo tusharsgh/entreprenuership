@@ -44,7 +44,7 @@ function BookingScreen({ navigation, route }) {
             </Text>
           </View>
         </View>
-        <View style={{ flexDirection: "row",right:90 }}>
+        <View style={{ flexDirection: "row" }}>
           <Icon name="star" size={20} color="orange" />
           <Icon name="star" size={20} color="orange" />
           <Icon name="star" size={20} color="orange" />
